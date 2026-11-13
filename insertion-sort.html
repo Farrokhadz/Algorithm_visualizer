@@ -106,6 +106,38 @@
         </div>
       </section>
 
+      <section id="playground">
+        <p class="prompt"><span class="user">guest@algo</span>:<span class="path">~</span>$ ./insertion_sort --input</p>
+
+        <label class="field" for="data">Numbers (0 to 999, separated by spaces or commas, up to 24)</label>
+        <div class="row">
+          <input id="data" type="text" value="29 10 14 37 13 5 22" autocomplete="off" spellcheck="false">
+          <button id="load" type="button">load</button>
+          <button id="random" type="button">random</button>
+        </div>
+        <p id="err" class="err" role="alert"></p>
+
+        <div id="bars" class="bars" aria-hidden="true"></div>
+        <ul class="legend">
+          <li><i class="sw sw-un"></i>unsorted</li>
+          <li><i class="sw sw-so"></i>sorted part</li>
+          <li><i class="sw sw-cm"></i>being compared</li>
+          <li><i class="sw sw-ky"></i>key</li>
+        </ul>
+
+        <p id="log" class="log" aria-live="polite"></p>
+        <p id="stats" class="dim"></p>
+
+        <div class="row controls">
+          <button id="play" type="button">play</button>
+          <button id="step" type="button">step</button>
+          <button id="reset" type="button">reset</button>
+          <label class="speed" for="speed">speed
+            <input id="speed" type="range" min="1" max="10" value="5">
+          </label>
+        </div>
+      </section>
+      <script src="js/insertion-sort.js"></script>
 
 
       <p class="prompt"><span class="user">guest@algo</span>:<span class="path">~</span>$ <span class="cursor" aria-hidden="true"></span></p>
