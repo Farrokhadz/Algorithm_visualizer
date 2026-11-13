@@ -1,0 +1,23 @@
+/* Algorithm page layout (shared by all algorithm pages) */
+body { align-items: flex-start; }
+.terminal.wide { max-width: 920px; }
+
+.nav a { border-bottom: 1px solid var(--dim); color: var(--dim); }
+.nav a:hover { color: var(--fg); border-color: var(--fg); }
+
+h1 { font-size: clamp(20px, 5vw, 30px); margin: 12px 0 8px; }
+
+.tags { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 28px; padding: 0; }
+.tags li { border: 1px solid var(--dim); padding: 0 8px; font-size: 13px; color: var(--dim); }
+
+section { margin-bottom: 36px; }
+section p { max-width: 72ch; margin: 0 0 12px; }
+em { font-style: normal; text-decoration: underline; text-underline-offset: 3px; }
+section .prompt { margin-bottom: 14px; }
+
+.code {
+  margin: 16px 0; padding: 14px 16px; border: 1px solid var(--line);
+  background: #000; overflow-x: auto; font-size: 13px; line-height: 1.6;
+}
+
+

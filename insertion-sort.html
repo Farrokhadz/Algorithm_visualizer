@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>insertion_sort() | Algorithm Visualizer</title>
+  <meta name="description" content="Insertion sort explained, with references and a step-by-step animation you can run on your own data.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/algo-page.css">
+</head>
+<body>
+  <main class="terminal wide">
+    <div class="titlebar">
+      <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+      <span class="title">guest@algo: ~/algorithms/insertion_sort</span>
+    </div>
+
+    <div class="screen">
+      <p class="nav"><a href="index.html">cd ..</a></p>
+      <h1>insertion_sort()</h1>
+      <ul class="tags">
+        <li>worst O(n²)</li>
+        <li>best O(n)</li>
+        <li>space O(1)</li>
+        <li>stable</li>
+        <li>in-place</li>
+      </ul>
+
+      <section id="overview">
+        <p class="prompt"><span class="user">guest@algo</span>:<span class="path">~</span>$ cat overview.txt</p>
+        <p>
+          Insertion sort is the first algorithm CLRS presents in
+          <em>Introduction to Algorithms</em> (chapter 2.1). The book compares it
+          to sorting a hand of playing cards: the cards already in your hand are in
+          order, you pick up the next one from the table, and you slide it in from
+          the right until it sits in the right place.
+        </p>
+        <p>
+          On an array, the left part is the sorted hand. Each round takes the next
+          element (the <em>key</em>), shifts every larger element in the sorted part
+          one slot to the right, and drops the key into the gap.
+        </p>
+        <p>
+          CLRS proves it correct with a <em>loop invariant</em>: before each round,
+          the elements to the left of the key are the original ones, already in
+          sorted order. The invariant holds at the start, each round keeps it true,
+          and when the loop ends it says the whole array is sorted.
+        </p>
+        <p>
+          On sorted input each key needs one comparison, so the time is linear. On
+          reverse-sorted input each key moves all the way to the front, so the time
+          is quadratic. The average case is quadratic as well.
+        </p>
+<pre class="code">insertion_sort(A):
+    for j = 1 to length(A) - 1:
+        key = A[j]
+        i = j - 1
+        while i >= 0 and A[i] > key:
+            A[i + 1] = A[i]       # shift right
+            i = i - 1
+        A[i + 1] = key            # insert</pre>
+        <p class="dim">Summary paraphrased from CLRS, section 2.1. Pseudocode rewritten with 0-based indexes.</p>
+      </section>
+
+
+
+
+      <p class="prompt"><span class="user">guest@algo</span>:<span class="path">~</span>$ <span class="cursor" aria-hidden="true"></span></p>
+    </div>
+  </main>
+</body>
+</html>
