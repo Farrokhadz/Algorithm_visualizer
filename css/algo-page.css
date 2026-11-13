@@ -20,4 +20,12 @@ section .prompt { margin-bottom: 14px; }
   background: #000; overflow-x: auto; font-size: 13px; line-height: 1.6;
 }
 
+.man-h { font-weight: 700; margin: 0 0 4px; }
+.man-b { margin: 0 0 16px 4ch; color: var(--dim); }
+.refs { list-style: none; margin: 0 0 0 4ch; padding: 0; }
+.refs li { display: grid; grid-template-columns: 1fr auto; gap: 0 12px; padding: 8px 0; border-bottom: 1px solid var(--line); }
+.refs a { text-decoration: underline; text-underline-offset: 3px; font-weight: 700; }
+.refs a:hover { background: var(--fg); color: var(--bg); text-decoration: none; }
+.refs .kind { color: var(--dim); font-size: 13px; }
+.refs .why { grid-column: 1 / 3; color: var(--dim); font-size: 13px; }
 
