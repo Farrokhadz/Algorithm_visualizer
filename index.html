@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Algorithm Visualizer</title>
+    <meta
+      name="description"
+      content="Minimal, interactive sorting & selection algorithm visualizer."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <main class="terminal">
+      <div class="titlebar">
+        <span class="dot"></span><span class="dot"></span
+        ><span class="dot"></span>
+        <span class="title">guest@algo-visualizer: ~</span>
+      </div>
+
+      <div class="screen">
+        <pre class="banner" aria-label="Algorithm Visualizer">
+    _    _                  _ _   _
+   / \  | | __ _  ___  _ __(_) |_| |__  _ __ ___
+  / _ \ | |/ _` |/ _ \| '__| | __| '_ \| '_ ` _ \
+ / ___ \| | (_| | (_) | |  | | |_| | | | | | | | |
+/_/   \_\_|\__, |\___/|_|  |_|\__|_| |_|_| |_| |_|
+           |___/        visualizer</pre
+        >
+
+        <p class="dim">Pick an algorithm to watch it run step by step.</p>
+
+        <p class="prompt">
+          <span class="user">guest@algo</span>:<span class="path">~</span>$ ls
+          algorithms/
+        </p>
+
+        <ul class="algo-list">
+          <li>
+            <a class="algo-link" href="insertion-sort.html">
+              <span class="caret">&gt;</span>
+              <span class="name">insertion_sort()</span>
+              <span class="meta">O(n²)</span>
+              <span class="desc"
+                >Insert each element into its place in the sorted part.</span
+              >
+            </a>
+          </li>
+          <li>
+            <a class="algo-link" href="merge-sort.html">
+              <span class="caret">&gt;</span>
+              <span class="name">merge_sort()</span>
+              <span class="meta">O(n log n)</span>
+              <span class="desc"
+                >Split the array in half, sort each half, merge them.</span
+              >
+            </a>
+          </li>
+        </ul>
+
+        <p class="prompt">
+          <span class="user">guest@algo</span>:<span class="path">~</span>$
+          <span class="cursor" aria-hidden="true"></span>
+        </p>
+      </div>
+    </main>
+  </body>
+</html>
