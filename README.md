@@ -78,4 +78,32 @@ Merge Sort is a divide-and-conquer algorithm. It splits the array into two halve
 
 ---
 
+### 🔹 Quick Sort
+
+**Description:**
+Quick Sort is a divide-and-conquer algorithm. It picks a pivot, partitions the array so that smaller elements end up before the pivot and larger elements after it, and then sorts both sides recursively. The pivot is already in its final position after partitioning.
+
+**How it works:**
+1. Choose a pivot (here: the last element of the range).
+2. Partition: move elements up to the pivot to the front, larger ones behind them.
+3. Place the pivot between the two groups.
+4. Recursively sort the left and right parts.
+
+**Complexity:**
+
+| Case | Time Complexity |
+|---|---|
+| Best | O(n log n) |
+| Average | O(n log n) |
+| Worst (e.g. sorted input with last-element pivot) | O(n²) |
+| Space | O(log n) expected (recursion stack) |
+
+**Properties:**
+- ❌ Not stable
+- ✅ In-place
+- ✅ Fast in practice (small constants)
+- ✅ Divide and conquer
+
+---
+
 <!-- More algorithms will be added here -->
