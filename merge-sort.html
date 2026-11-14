@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>merge_sort() | Algorithm Visualizer</title>
+  <meta name="description" content="Merge sort explained, with references and a recursion-tree animation you can run on your own data.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/algo-page.css">
+</head>
+<body>
+  <main class="terminal wide">
+    <div class="titlebar">
+      <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+      <span class="title">guest@algo: ~/algorithms/merge_sort</span>
+    </div>
+
+    <div class="screen">
+      <p class="nav"><a href="index.html">cd ..</a></p>
+      <h1>merge_sort()</h1>
+      <ul class="tags">
+        <li>worst O(n log n)</li>
+        <li>best O(n log n)</li>
+        <li>space O(n)</li>
+        <li>stable</li>
+        <li>divide &amp; conquer</li>
+      </ul>
+
+      <section id="overview">
+        <p class="prompt"><span class="user">guest@algo</span>:<span class="path">~</span>$ cat overview.txt</p>
+        <p>
+          CLRS uses merge sort (chapter 2.3) to introduce <em>divide and conquer</em>.
+          The idea has three parts: <em>divide</em> the problem into smaller copies of
+          itself, <em>conquer</em> them by solving each one recursively, and
+          <em>combine</em> the answers.
+        </p>
+        <p>
+          For sorting, that means splitting the array into two halves, sorting each
+          half recursively, and merging the two sorted halves into one. The recursion
+          stops at pieces of length 1, since a single element is already sorted.
+        </p>
+        <p>
+          All the real work happens in the merge. Picture two sorted piles of cards.
+          Look at the top card of each pile, take the smaller one, and repeat until
+          both piles are empty. Each element is taken once, so merging n elements
+          costs time proportional to n.
+        </p>
+        <p>
+          Splitting in half gives about log n levels of recursion, and every level
+          merges n elements in total. That is why the recurrence
+          T(n) = 2T(n/2) + cn solves to O(n log n), in the best, average and worst
+          case alike. The price is O(n) extra memory for the merge. Taking from the
+          left half on ties keeps equal elements in order, so the sort is stable.
+        </p>
+<pre class="code">merge_sort(A, lo, hi):
+    if lo >= hi: return
+    mid = (lo + hi) // 2
+    merge_sort(A, lo, mid)
+    merge_sort(A, mid + 1, hi)
+    merge(A, lo, mid, hi)
+
+merge(A, lo, mid, hi):
+    L = copy of A[lo..mid]
+    R = copy of A[mid+1..hi]
+    i = 0; j = 0; k = lo
+    while i < len(L) and j < len(R):
+        if L[i] <= R[j]: A[k] = L[i]; i = i + 1
+        else:            A[k] = R[j]; j = j + 1
+        k = k + 1
+    copy whatever is left of L, then of R, into A[k..]</pre>
+        <p class="dim">Summary paraphrased from CLRS, section 2.3. Pseudocode rewritten with 0-based indexes.</p>
+      </section>
+
+
+
+
+      <p class="prompt"><span class="user">guest@algo</span>:<span class="path">~</span>$ <span class="cursor" aria-hidden="true"></span></p>
+    </div>
+  </main>
+</body>
+</html>
