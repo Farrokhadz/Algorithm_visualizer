@@ -1,0 +1,15 @@
+/* Recursion tree for merge sort */
+.tree { overflow-x: auto; padding: 16px 8px 14px; border: 1px solid var(--line); border-bottom: 2px solid var(--fg); }
+.tree-inner { position: relative; }
+.lines { position: absolute; inset: 0; pointer-events: none; }
+.lines line { stroke: #666; stroke-width: 1; }
+.node { position: absolute; padding: 0 3px; }
+.cells { display: flex; border: 1px solid var(--dim); background: #000; }
+.nd-divide .cells, .nd-merge .cells { border-color: var(--fg); outline: 2px solid var(--fg); outline-offset: 1px; }
+.c { flex: 1 1 0; min-width: 0; height: 30px; display: flex; align-items: center; justify-content: center; font-size: 12px; border-right: 1px solid #222; }
+.c:last-child { border-right: 0; }
+.c.raw { background: #444; }
+.c.out { background: #fff; color: #000; }
+.c.empty { background: #000; color: var(--dim); }
+.c.hl { background: #bbb; color: #000; outline: 2px solid var(--fg); outline-offset: -2px; }
+.sw-ac { background: #000; border: 2px solid #fff; }

@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/algo-page.css">
+  <link rel="stylesheet" href="css/merge-tree.css">
 </head>
 <body>
   <main class="terminal wide">
@@ -115,6 +116,38 @@ merge(A, lo, mid, hi):
         </div>
       </section>
 
+      <section id="playground">
+        <p class="prompt"><span class="user">guest@algo</span>:<span class="path">~</span>$ ./merge_sort --input</p>
+
+        <label class="field" for="data">Numbers (0 to 999, separated by spaces or commas, up to 16)</label>
+        <div class="row">
+          <input id="data" type="text" value="38 27 43 3 9 82 10 15" autocomplete="off" spellcheck="false">
+          <button id="load" type="button">load</button>
+          <button id="random" type="button">random</button>
+        </div>
+        <p id="err" class="err" role="alert"></p>
+
+        <div id="tree" class="tree" aria-hidden="true"></div>
+        <ul class="legend">
+          <li><i class="sw sw-un"></i>not sorted yet</li>
+          <li><i class="sw sw-ac"></i>current step</li>
+          <li><i class="sw sw-so"></i>sorted</li>
+          <li><i class="sw sw-cm"></i>being compared</li>
+        </ul>
+
+        <p id="log" class="log" aria-live="polite"></p>
+        <p id="stats" class="dim"></p>
+
+        <div class="row controls">
+          <button id="play" type="button">play</button>
+          <button id="step" type="button">step</button>
+          <button id="reset" type="button">reset</button>
+          <label class="speed" for="speed">speed
+            <input id="speed" type="range" min="1" max="10" value="5">
+          </label>
+        </div>
+      </section>
+      <script src="js/merge-sort.js"></script>
 
 
       <p class="prompt"><span class="user">guest@algo</span>:<span class="path">~</span>$ <span class="cursor" aria-hidden="true"></span></p>
