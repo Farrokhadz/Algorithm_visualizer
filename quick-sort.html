@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>quick_sort() | Algorithm Visualizer</title>
+  <meta name="description" content="Quicksort explained, with references and a partition-by-partition animation you can run on your own data.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/algo-page.css">
+</head>
+<body>
+  <main class="terminal wide">
+    <div class="titlebar">
+      <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+      <span class="title">guest@algo: ~/algorithms/quick_sort</span>
+    </div>
+
+    <div class="screen">
+      <p class="nav"><a href="index.html">cd ..</a></p>
+      <h1>quick_sort()</h1>
+      <ul class="tags">
+        <li>worst O(n²)</li>
+        <li>average O(n log n)</li>
+        <li>space O(log n)</li>
+        <li>in-place</li>
+        <li>unstable</li>
+      </ul>
+
+      <section id="overview">
+        <p class="prompt"><span class="user">guest@algo</span>:<span class="path">~</span>$ cat overview.txt</p>
+        <p>
+          Quicksort (CLRS chapter 7) is another divide-and-conquer sort. Its worst
+          case is quadratic, yet CLRS notes it is often the best practical choice
+          for large inputs: the expected time is O(n log n) with small constants,
+          and it sorts in place.
+        </p>
+        <p>
+          Each call picks a <em>pivot</em> and runs a <em>partition</em> step that
+          rearranges the range so everything not larger than the pivot sits to its
+          left and everything larger sits to its right. The pivot is now in its
+          final position. Then both sides are sorted recursively. Unlike merge sort,
+          the work happens while dividing, and there is nothing to combine.
+        </p>
+        <p>
+          The version here is the one in CLRS: the last element is the pivot, and a
+          left-to-right scan grows a low region (elements up to the pivot) at the
+          front, followed by a high region (larger elements).
+        </p>
+        <p>
+          The running time depends on how balanced the splits are. Balanced splits
+          give O(n log n). If the pivot is always the smallest or largest element,
+          the pieces have sizes 0 and n - 1 and the time becomes quadratic. With the
+          last element as pivot, an already sorted array does exactly that. CLRS
+          shows that choosing the pivot at random makes this unlikely for every
+          input. Quicksort is not stable, because swaps can jump over equal
+          elements. Its only extra memory is the recursion stack.
+        </p>
+<pre class="code">quick_sort(A, lo, hi):
+    if lo < hi:
+        q = partition(A, lo, hi)
+        quick_sort(A, lo, q - 1)
+        quick_sort(A, q + 1, hi)
+
+partition(A, lo, hi):
+    pivot = A[hi]
+    i = lo - 1
+    for j = lo to hi - 1:
+        if A[j] <= pivot:
+            i = i + 1
+            swap A[i], A[j]
+    swap A[i + 1], A[hi]
+    return i + 1</pre>
+        <p class="dim">Summary paraphrased from CLRS, chapter 7. Pseudocode rewritten with 0-based indexes.</p>
+      </section>
+
+
+
+
+      <p class="prompt"><span class="user">guest@algo</span>:<span class="path">~</span>$ <span class="cursor" aria-hidden="true"></span></p>
+    </div>
+  </main>
+</body>
+</html>
