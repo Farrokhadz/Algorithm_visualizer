@@ -50,4 +50,32 @@ Insertion Sort builds the sorted array one element at a time. It takes each elem
 
 ---
 
+### 🔹 Merge Sort
+
+**Description:**
+Merge Sort is a divide-and-conquer algorithm. It splits the array into two halves, sorts each half recursively, and then merges the two sorted halves into one sorted array.
+
+**How it works:**
+1. Divide the array into two halves.
+2. Recursively sort each half (a single element is already sorted).
+3. Merge the two sorted halves by repeatedly taking the smaller front element.
+4. Repeat until the whole array is merged.
+
+**Complexity:**
+
+| Case | Time Complexity |
+|---|---|
+| Best | O(n log n) |
+| Average | O(n log n) |
+| Worst | O(n log n) |
+| Space | O(n) |
+
+**Properties:**
+- ✅ Stable
+- ❌ Not in-place (needs O(n) extra memory)
+- ✅ Predictable performance
+- ✅ Divide and conquer
+
+---
+
 <!-- More algorithms will be added here -->
