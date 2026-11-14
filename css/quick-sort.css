@@ -1,0 +1,9 @@
+/* Extra bar states for quicksort partitioning */
+.bar.lo { background: #aaa; }
+.bar.hi { background: #2e2e2e; outline: 1px solid #777; outline-offset: -1px; }
+.bar.out { background: #1a1a1a; }
+.bar.lo span, .bar.out span { color: var(--fg); }
+.sw-lo { background: #aaa; }
+.sw-hi { background: #2e2e2e; outline: 1px solid #777; outline-offset: -1px; }
+.sw-ou { background: #1a1a1a; outline: 1px solid #333; }
+code { border: 1px solid var(--line); padding: 0 4px; }
